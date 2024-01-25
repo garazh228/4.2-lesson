@@ -8,22 +8,32 @@
 import UIKit
 
 class FifthViewController: UIViewController {
+    
+    private var fifthPageImg: UIImageView = {
+        let img = UIImageView()
+        img.image = UIImage(named: "passed")
+        img.contentMode = .scaleAspectFill
+        img.translatesAutoresizingMaskIntoConstraints = false
+        return img
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupSecondPageImg()
+        
+        GradientSET.setupGradientBackground(for: view)
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupSecondPageImg() {
+        view.addSubview(fifthPageImg)
+        
+        NSLayoutConstraint.activate([
+            fifthPageImg.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            fifthPageImg.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
     }
-    */
 
 }

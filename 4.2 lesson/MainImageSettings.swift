@@ -8,22 +8,24 @@
 import UIKit
 
 class MainImageSettings: UIViewController {
+    
+    static func setupMainImage() -> UIImageView {
+        let mainImg: UIImageView = {
+            let img = UIImageView()
+            img.image = UIImage(named: "boy")
+            img.contentMode = .scaleAspectFill
+            img.translatesAutoresizingMaskIntoConstraints = false
+            return img
+           }()
+        
+        return mainImg
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
 
 }
